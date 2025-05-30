@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTRL + ME</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111111;
+      --text: #E5E5E5;
+      --highlight: #FF6B00;
+      --accent: #00CFFF;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans KR', sans-serif;
+      min-height: 100vh; /* 화면의 세로 전체 높이(100vh = 100%)만큼 body가 최소 높이를 가지도록 함 */
+    }
+
+
+    header {
+      overflow: hidden; /* 주석 필요 */
+      border-bottom: 1px solid #333;
+      padding: 2rem;
+    }
+    header h2 {
+      float: left;
+      margin: 0;
+    }
+
+    nav {
+      float: right;
+    }
+    
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      color: var(--highlight);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--highlight);
+      font-size: 2rem;
+      margin: 2rem;
+    }
+
+    .container {
+      overflow: hidden; /* 주석 필요 */
+      margin: 0 2rem 2rem;
+    }
+
+    .left-column, .right-column {
+      width: 48%;  /* 두 개 합쳐서 약 96% + 여백 */
+      float: left;
+      min-width: 300px; /* 박스의 최소 너비를 보장 */
+      background: #1f1f1f;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    .left-column {
+      margin-right: 4%;
+    }
+
+
+    .info-box, .mbti-box {
+      background: #2a2a2a;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .qa-box {
+      background: #2a2a2a;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+    }
+    .qa {
+      margin-bottom: 1rem;
+      line-height: 1.5; /* 줄과 줄 사이의 간격을 1.5배 */
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      clear: both;
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="ALT + TAB + STAGE 로고" style="float: left; height: 50px;">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="subpage1.html" class="active">CTRL + ME</a>
+      <a href="subpage2.html">Devlog</a>
+      <a href="subpage3.html">Stage & Sound</a>
+      <a href="subpage4.html">ClimbLog</a>
+      <a href="subpage5.html">Snaps</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>🎸 CTRL + ME</h1>
+    <div class="container">
+      <div class="left-column">
+        <div class="info-box">
+          <h3>나의 정보</h3>
+          <p>
+            <strong>이름:</strong> 김지원<br>
+            <strong>전공:</strong> 컴퓨터공학과<br>
+            <strong>MBTI:</strong> ISFP<br>
+            <strong>취미:</strong> 음악 감상, 밴드 활동, 클라이밍<br>
+            <strong>좌우명:</strong> 사랑으로 !
+          </p>
+        </div>
+
+        <div class="mbti-box">
+          <h3>나의 MBTI 소개</h3>
+          <ul>
+            <li><strong>I (Introversion):</strong> 혼자 있을 때 에너지 충전 완료!</li>
+            <li><strong>S (Sensing):</strong> 지금 이 순간, 현실에 집중!</li>
+            <li><strong>F (Feeling):</strong> 논리보다 마음이 먼저 반응!</li>
+            <li><strong>P (Perceiving):</strong> 계획? 그때그때 다르게!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <h3>밸런스 게임</h3>
+        <div class="qa"><strong>Q1 🎶</strong> 밴드 vs 개발? → <strong>A1</strong> 둘 다 무대, 성격만 다름.</div>
+        <div class="qa"><strong>Q2 🧗‍♀️</strong> 클라이밍 vs 배구? → <strong>A2</strong> 오늘은 클라이밍, 내일은 배구.</div>
+        <div class="qa"><strong>Q3 👨‍💻</strong> 혼자 작업 vs 협업? → <strong>A3</strong> 혼자 시작, 함께 완성.</div>
+        <div class="qa"><strong>Q4 🌙</strong> 다크모드 vs 라이트모드? → <strong>A4</strong> 무조건 다크모드.</div>
+        <div class="qa"><strong>Q5 📖</strong> 종이책 vs 전자책? → <strong>A5</strong> 종이 냄새 좋아해서 종이책!</div>
+        <div class="qa"><strong>Q6 🎤</strong> 보컬 vs 악기? → <strong>A6</strong> 베이스가 내 무기!</div>
+        <div class="qa"><strong>Q7 🎧</strong> 콘서트 vs 플레이리스트 감상? → <strong>A7</strong> 라이브의 진동이 최고지.</div>
+        <div class="qa"><strong>Q8 🏕</strong> 캠핑 vs 호텔? → <strong>A8</strong> 불멍 가능한 캠핑 한 표!</div>
+        <div class="qa"><strong>Q9 ☕️</strong> 아아 vs 따아? → <strong>A9</strong> 얼어 죽어도 아이스!</div>
+        <div class="qa"><strong>Q10 🕹</strong> PC게임 vs 콘솔게임? → <strong>A10</strong> 마우스 감성에 한 표, PC!</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    COPYRIGHT(C) 가천대학교 컴퓨터공학과 202332628 김지원 All Rights Reserved.
+  </footer>
+</body>
+</html>

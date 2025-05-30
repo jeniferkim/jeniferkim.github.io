@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snaps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111111;
+      --text: #E5E5E5;
+      --highlight: #00CFFF;
+      --arrow-bg: #00CFFF;
+      --arrow-color: #111111;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans KR', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      padding: 2rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      color: var(--highlight);
+    }
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    h1 {
+      color: var(--highlight);
+      font-family: 'Montserrat', sans-serif;
+      margin: 2rem 0;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden; /* 넘치는 내용을 숨겨서 슬라이더 바깥 영역이 보이지 않게 함 */
+    }
+
+    .slider {
+      display: flex;
+      gap: 1rem;
+      overflow-x: scroll; /* 가로 방향으로 스크롤 가능하게 함 */
+      scroll-behavior: smooth; /* 스크롤을 부드럽게 움직이도록 설정 */
+      padding: 1rem;
+    }
+
+    .slider::-webkit-scrollbar {
+      display: none;  /* 웹킷 브라우저에서 스크롤바를 숨김 */
+    }
+
+    .slider img {
+      height: 300px;
+      width: auto;
+      border-radius: 8px;
+      flex-shrink: 0; /* 이미지가 줄어들지 않도록 고정 */
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--arrow-bg);
+      color: var(--arrow-color);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center; /* 버튼 안의 글자를 수직 가운데 정렬 */
+      justify-content: center; /* 버튼 안의 글자를 수평 가운데 정렬 */
+      cursor: pointer; /* 마우스를 올렸을 때 손가락 모양으로 변경 */
+      z-index: 10; /* 다른 요소보다 앞에 보이도록 설정 */
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="ALT + TAB + STAGE 로고" style="float: left; height: 50px;">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="subpage1.html">CTRL + ME</a>
+      <a href="subpage2.html">Devlog</a>
+      <a href="subpage3.html">Stage & Sound</a>
+      <a href="subpage4.html">ClimbLog</a>
+      <a href="subpage5.html" class="active">Snaps</a>
+    </nav>
+  </header>
+
+  <h1>📸 Snaps</h1>
+
+  <div class="slider-container">
+    <button class="arrow left" onclick="scrollSlider(-1)">←</button>
+    <div class="slider" id="slider">
+      <img src="g1.jpg" alt="일상 1">
+      <img src="g2.jpg" alt="일상 2">
+      <img src="g3.jpg" alt="일상 3">
+      <img src="g4.jpg" alt="일상 4">
+      <img src="g5.png" alt="일상 5">
+      <img src="g6.jpg" alt="일상 6">
+      <img src="g7.jpg" alt="일상 7">
+      <img src="g8.jpg" alt="일상 8">
+      <img src="g9.png" alt="일상 9">
+      <img src="g10.jpg" alt="일상 10">
+      <img src="g12.jpg" alt="일상 11">
+      <img src="g13.jpg" alt="일상 12">
+      <img src="g14.jpg" alt="일상 13">
+      <img src="g15.png" alt="일상 14">
+      <img src="g16.jpg" alt="일상 15">
+    </div>
+    <button class="arrow right" onclick="scrollSlider(1)">→</button>
+  </div>
+
+  <footer>
+    COPYRIGHT(C) 가천대학교 컴퓨터공학과 202332628 김지원 All Rights Reserved.
+  </footer>
+
+  <script>
+    // 슬라이더를 왼쪽 또는 오른쪽으로 부드럽게 스크롤하는 함수
+    function scrollSlider(direction) {
+      const slider = document.getElementById('slider'); // 슬라이더 영역을 선택
+      const scrollAmount = 350; // 한 번에 움직일 픽셀 값
+
+      // direction이 1이면 오른쪽, -1이면 왼쪽으로 이동
+      slider.scrollBy({
+        left: direction * scrollAmount, // 가로 방향으로 스크롤
+        behavior: 'smooth' // 부드럽게 움직이도록 설정
+      });
+    }
+  </script>
+</body>
+</html>
